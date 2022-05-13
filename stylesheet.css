@@ -1,0 +1,727 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+/*	Google Fonts 
+font-family: 'Roboto', sans-serif;
+*/
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+body,
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+/* ==========
+ CSS VARIABLES
+===========*/
+:root {
+	--primary: #2b2d42;
+	--secondary: #8d99ae;
+	--tertiary: #d90429;
+	--white: #edf2f4;
+	--black: #212529;
+	--grey: #d9d9d9;
+}
+
+.wrapper {
+	height: 100vh;
+	width: 100%;
+	padding: 200px 0;
+}
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+#portfolio {
+	background: var(--black);
+	color: white;
+}
+#contact {
+	background: #d9d9d9;
+	
+}
+.txt-color {
+	color: var(--white);
+}
+.stroke {
+	-webkit-text-stroke: 1px var(--tertiary);
+}
+.grey {
+	color: #d9d9d9;
+}
+/* Buttons CSS */
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	font-weight: 900; 
+	font-size: 18px;
+	padding: 10px 24px;
+	margin: 5px;
+}
+/* --------------------- NavBar CSS --------------------- */
+.navbar {
+	background-color: var(--primary);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 15px;
+	height: 8vh;
+	min-height: 100px;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+}
+.home-container {
+	color: white;
+}
+.mainMenu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	font-size: 24px;
+	color: white;
+	padding: 15px;
+	list-style: none;
+	width: 70%;
+}
+.mainMenu a {
+	text-decoration: none;
+	color: #d9d9d9;
+	user-select: none;
+	-webkit-user-select: none;
+}
+.openMenu {
+	font-size: 36px;
+	margin: 30px;
+	display: none; 
+	cursor: pointer;
+}
+.mainMenu .closeMenu , .icons i {
+	font-size: 36px;
+	display: none;
+	cursor: pointer;
+}
+
+.nav-title {
+	font-size: 2rem;
+	color: var(--white);
+	font-weight: 900;
+	
+}
+
+li.active a {
+	color: white;
+	font-weight: bold;
+}
+.icons a {
+	color: var(--secondary);
+}
+.icons a:hover {
+	color: white;
+}
+/* --------------------- Home Section CSS --------------------- */
+.home-container {
+	display: grid;
+	place-content: center;
+	background: url("images/dark.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.upper-home {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	max-width: 800px;
+	line-height: 4em;
+}
+.portfolio-pic {
+	width: 250px;
+	height: 250px;
+	background: url("images/henryImg1.jpg");
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
+	margin-right: 40px;
+	border: 2px solid var(--secondary);
+}
+.title {
+	font-size: 54px;
+	font-weight: 900;
+}
+.h2-title {
+	color: var(--grey);
+	border-bottom: 1px solid white;
+	font-size: 1.6rem;
+	margin-bottom: 1em;
+}
+.upper-home h3 {
+	font-size: 1.2rem;
+	color: var(--grey);
+}
+.lower-home {
+	height: 300px;
+}
+.lower-home p {
+	font-weight: 400;
+	text-align: center;
+	font-size: 1rem;
+	max-width: 500px;
+	position: relative;
+	left: 400px;
+	top: 100px;
+	background: var(--tertiary);
+	color: var(--grey);
+	padding: 1em;
+	border-radius: 6em;
+}
+/* --------------------- About Section CSS --------------------- */
+.about-items {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-gap: 10px;
+}
+.container h2 {
+	font-size: 30px;
+	font-weight: 900;
+	padding-left: 10px;
+}
+.myPic {
+	width: 100%;
+}
+.about-p {
+	text-align: center;
+}
+.about-boxes {
+	text-align: center;
+	line-height: 1.6em;
+	padding: 15px;
+}
+.about-boxes h3 {
+	font-weight: 900;
+}
+.about-boxes ul li {
+	list-style: none;
+}
+
+/* --------------------- Portfolio Section CSS --------------------- */
+.portfolio-container {
+	display: grid;
+	place-content: center;
+}
+/* Position the image container (needed to position the left and right arrows) */
+.slide-container {
+  position: relative;
+	max-width: 1000px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+/* --------------------- Contact Section CSS --------------------- */
+.contact-container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.contact-items {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.contact-boxes {
+	padding: 20px;
+}
+.contact-boxes:nth-child(1) {
+	background-color: var(--black);
+	color: white;
+}
+.contact-boxes:nth-child(2) {
+	background-color: var(--secondary)
+;	color: white;
+}
+.contact-boxes h2 {
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.contact-boxes ul {
+	margin-top: 50px;
+	float: left;
+}
+.contact-boxes ul li {
+	list-style: none;
+	line-height: 40px;
+	font-size: 18px;
+	text-align: left;
+}
+.contact-boxes i {
+	border: 2px solid var(--primary);
+}
+.businessman {
+	width: 250px;
+	float: right;
+	margin-top: 50px;
+}
+.contact-boxes ul li a {
+	text-decoration: none;
+	color: white;
+}
+.contact-boxes ul li a:hover {
+	text-decoration: underline;
+}
+.contact-boxes ul li i {
+	background-color: #ffffff;
+	color: black;
+	padding: 15px;
+	border-radius: 50%;
+	margin: 10px 15px;
+	font-size: 26px;
+}
+#form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	line-height: 60px;
+}
+#form label {
+	font-size: 22px;
+}
+#form input, #form textarea {
+	font-size: 18px;
+	width: 100%;
+	padding: 5px;
+}
+#submit {
+	display: block;
+	font-size: 22px;
+	padding: 10px 25px;
+	color: white;
+	background-color: var(--tertiary);
+	border: none;
+	outline: none;
+	margin-top: 35px;
+	width: 75%;
+}
+#submit:hover,
+#submit:focuse {
+	background: var(--white);
+	color: var(--tertiary);
+}
+/* --------------------- Thank You Section CSS --------------------- */
+.thanks-section {
+	display: grid;
+	place-content: center;
+	background: #d9d9d9;
+	padding: 200px 0;
+	border-radius: 6px;
+	
+}
+.thanks-section h1 {
+	font-weight: 900;
+	font-size: 54px;
+	text-align: center;
+	color: #3c6e71;
+}
+.thanks-section p {
+	background: #c2e5d2;
+	font-size: 20px;
+	margin-top: 20px;
+	padding: 10px 24px;
+	border-radius: 6px;
+}
+.btn-home {
+	background-color: #3c6e71;
+	color: white;
+	max-width: 30%;
+	margin: 10px auto;
+	
+	
+}
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+/* --------------------- Laptops 1200px CSS --------------------- */
+@media only screen and (max-width: 1200px) {
+	section {
+		min-height: 100vh;
+	}
+	/* Home Section --------------------*/
+	.lower-home p {
+		position: relative;
+		left: 250px;
+	}
+}
+
+@media (min-height: 1000px), screen and (orientation: landscape) { 
+	#home,
+	#about,
+	#portfolio,
+	#contact {
+		height: auto;
+	}
+	.slide-container {
+		max-width: 650px;
+	}
+}
+
+@media (min-height: 700px), screen and (orientation: landscape) {
+	/*Home Landscape	*/
+	.upper-home {
+		margin-top: 80px;
+	}
+}
+
+@media (min-height: 600px), screen and (orientation: landscape) {
+	/*Home Landscape	*/
+	.upper-home {
+		margin-top: 50px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.wrapper {
+		padding: 100px 0;
+	}
+	#about {
+		height: auto;
+	}
+	/* Contact Section --------------------*/
+	#contact {
+		height: auto;
+		margin: 0 auto;
+	}
+	.contact-boxes {
+		padding: 10px;
+	}
+	#form input,
+	#form textarea {
+		max-width: 400px;
+	}
+	#submit {
+		max-width: 400px;
+		margin-bottom: 40px;
+	}
+}
+/* --------------------- Tablet Mode Page CSS --------------------- */
+@media only screen and (max-width: 860px) {
+	section {
+		height: 100vh;
+		padding: 0;
+		width: 100%;
+	}
+	#contact {
+		padding: 0;
+		border-top: 2px solid white;
+	}
+	
+	/* NavBar CSS  --------------------*/
+	.mainMenu {
+		height: 100vh;
+		width: 100vw;
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 10;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: #000000;
+		transition: left 1s ease;
+		display: none;
+		line-height: 2.5em;
+	}
+	.mainMenu .closeMenu {
+		display: block;
+		position: absolute;
+		top: 25px;
+		right: 47px;
+	}
+	.openMenu {
+		display: block;
+		color: white;
+	}
+	.mainMenu li a:hover {
+		background: none;
+		color: lightgrey;
+		font-size: 24px;
+	}
+	.icons {
+		margin-top: 100px;
+	}
+	.icons i {
+		display: inline-block;
+		padding: 12px;
+	}
+	.icons i:hover {
+		color: lightgrey;
+	}
+	/* Home Section --------------------*/
+	.lower-home p {
+		position: relative;
+		left: 150px;
+	}
+	/* About Section --------------------*/
+	.box-container {
+		margin: 40px auto;
+	}
+	.about-p {
+		padding: 16px;
+	}
+	.about-boxes {
+		margin-bottom: 10px;
+	}
+	#about {
+		display: grid;
+		place-content: center;
+	}
+	/* Portfolio Section --------------------*/
+	.portfolio-boxes {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin: auto;
+		gap: 45px;
+	}
+	/* Contact Section --------------------*/
+	.contact-boxes {
+		padding: 4em 2em;
+	}
+}
+/* --------------------- Mobile Mode CSS --------------------- */
+@media only screen and (max-width: 670px) {
+	section {
+		height: auto;
+		width: 100%;
+	}	
+	.wrapper {
+		padding: 0;
+	}
+	/* Home Page --------------------*/
+	.lower-home p {
+		position: relative;
+		left: 50px;
+		text-align: left;
+		background: none;
+	}
+	.portfolio-pic {
+		width: 200px;
+		height: 200px;
+		margin-right: 25px;
+	}
+	.title {
+		font-size: 36px;
+	}
+	.upper-home h3, h2{
+		font-size: 18px;
+		line-height: 2em;
+	}
+	/* About Page --------------------*/
+	.about-container {
+		height: auto;
+		grid-gap: 0;
+	}
+	/* Portfolio Section --------------------*/
+	.portfolio-p {
+		font-size: 1rem;
+	}
+	.portfolio-boxes ul li {
+		font-size: 16px;
+		line-height: 20px;
+	}
+	.portfolio-boxes {
+		grid-gap: 10px;
+	}
+	/* Contact Section --------------------*/
+	.businessman {
+		width: 150px;
+	}
+}
+/* --------------------- Mobile X-Small Page CSS --------------------- */
+@media only screen and (max-width: 560px) {
+	html {
+		overflow-x: hidden;
+	}
+	section {
+		padding: 0;
+		height: 100vh;
+	}
+	#home,
+	#about,
+	#portfolio,
+	#contact {
+		overflow-x: hidden;
+	}
+
+	/* Home Page --------------------*/
+	#home {
+		height: auto;
+	}
+	.lower-home p {
+		position: relative;
+		left: 5px;
+		top: 50px;
+		text-align: left;
+		font-size: 1rem;
+		min-width: 300px;
+		margin: 0;
+		padding: 0 1em 2em 1em;
+	}
+	.portfolio-pic {
+		margin-right: 8px;
+		margin-bottom: 40px;
+		margin-top: 280px;
+	}
+	.upper-home {
+		line-height: 45px;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 0;
+	}
+	.title-home {
+		margin-bottom: 0;
+	}
+	/* About Page --------------------*/
+	.about-p {
+		font-size: 14px;
+	}
+	/* Portfolio Section --------------------*/
+	.portfolio-container {
+		height: auto;
+	}
+	.portfolio-boxes {
+		display: grid; 
+		grid-template-columns: 1fr;
+		grid-gap: 5px;
+	}
+	.portfolio-p {
+		font-size: 14px;
+	}
+	.portfolio-boxes ul li {
+		font-size: 14px;
+		line-height: 16px;
+		padding-top: 10px;
+	}
+	/* Contact Section --------------------*/
+	#contact {
+		padding: 0;
+	}
+	.contact-boxes {
+		padding: 0;
+		width: 100%;
+	}
+	.contact-boxes h2 {
+		font-size: 1.2rem;
+	}
+	#form {
+		margin: 0;
+		padding: 0;
+	}
+	#form label {
+		font-size: 1rem;
+	}
+	#form input, 
+	#form textarea,
+	#submit {
+		font-size: 1rem;
+	}
+	#form input,
+	#form textarea {
+		max-width: 65%;
+	}
+	.contact-boxes i {
+		font-size: 18px;
+		padding: 10px;
+	}
+	.contact-boxes li {
+		font-size: 18px;
+	}
+	.businessman {
+		display: none;
+	}
+}
