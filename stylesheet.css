@@ -391,6 +391,9 @@ li.active a {
 	color: var(--tertiary);
 }
 /* --------------------- Thank You Section CSS --------------------- */
+.bg-body {
+	background-color: var(--primary);
+}
 .thanks-section {
 	display: grid;
 	place-content: center;
@@ -403,17 +406,18 @@ li.active a {
 	font-weight: 900;
 	font-size: 54px;
 	text-align: center;
-	color: #3c6e71;
+	color: var(--primary);
 }
 .thanks-section p {
-	background: #c2e5d2;
+	background: var(--secondary);
+	color: var(--white);
 	font-size: 20px;
 	margin-top: 20px;
 	padding: 10px 24px;
 	border-radius: 6px;
 }
 .btn-home {
-	background-color: #3c6e71;
+	background-color: var(--tertiary);
 	color: white;
 	max-width: 30%;
 	margin: 10px auto;
